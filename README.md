@@ -10,3 +10,9 @@ Refer to [lachlanevenson/k8s-kubectl][1] for operational settings like [volume b
 # Plans
 It is planned to create a more extended automated build on docker hub to produce different versions.  
 For now this is a proof-of-concept that only builds `latest` lachlanevenson/k8s-kubectl tag
+
+# Example usage
+Start a docker container using kubectl config present in your current directory.
+```shell
+docker run --rm -it -v $(pwd)/config:/config -e KUBECONFIG=/config/config.yml colthreepv/kubectl-shell
+```
